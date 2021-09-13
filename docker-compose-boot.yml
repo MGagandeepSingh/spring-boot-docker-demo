@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  api_service:
+    image: docker-demo
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - movie_db
+    environment:
+      - "SPRING_PROFILES_ACTIVE=docker"
